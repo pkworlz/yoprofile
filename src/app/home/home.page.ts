@@ -19,4 +19,9 @@ export class HomePage {
     return this.data.getMessages();
   }
 
+  addProfile() {
+    console.log("addProfile");
+    
+  }
+
 }
