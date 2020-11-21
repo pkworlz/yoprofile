@@ -14,7 +14,7 @@
     <div class="ion-text-center">
       <img [src]="this.newProfile.imageUrl" width="150px" height="150px">
       <br>
-      <ion-button color="warning" size="small" > 
+      <ion-button color="warning" size="small" (click)="takePicture()"> 
         <ion-icon slot="icon-only" name="create-outline"></ion-icon>
       </ion-button>
     </div>
