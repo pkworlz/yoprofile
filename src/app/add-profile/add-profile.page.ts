@@ -19,7 +19,7 @@ export class AddProfilePage implements OnInit {
 
   options: CameraOptions = {
     quality: 100,
-    destinationType: this.camera.DestinationType.FILE_URI,
+    destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
     mediaType: this.camera.MediaType.PICTURE
   }
@@ -42,7 +42,7 @@ export class AddProfilePage implements OnInit {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
       let base64Image = 'data:image/jpeg;base64,' + imageData;
-      console.log(imageData);
+      this.newProfile.imageUrl = base64Image;
       
      }, (err) => {
       // Handle error
