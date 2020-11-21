@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add New Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <br>
+    <div class="ion-text-center">
+      <img [src]="this.newProfile.imageUrl" width="150px" height="150px">
+      <br>
+      <ion-button color="warning" size="small" > 
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <br>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input [(ngModel)]="this.newProfile.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="this.newProfile.email"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <div  class="ion-text-center">
+    <ion-button (click)="submitProfile()">Submit</ion-button>
+  </div>
+
+</ion-content>

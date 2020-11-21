@@ -18,14 +18,20 @@
   <!-- to show list of profiles -->
 
   <ion-list>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-avatar>
-      <ion-label>
-        <h3>Prem Kumar</h3>
-        <p>pkworlz@gmail.com</p>
-      </ion-label>
-    </ion-item>
+    <ion-item-sliding *ngFor="let item of this.profileService.profiles">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]='item.imageUrl?item.imageUrl:"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"'>
+        </ion-avatar>
+        <ion-label>
+          <h3>{{item.name}}</h3>
+          <p>{{item.email}}</p>
+        </ion-label>
+      </ion-item>
+      
+      <ion-item-options color="danger">
+        <ion-item-option color="danger" (click)="this.profileService.remove(item)"><ion-icon name="trash-outline" slot="icon-only"></ion-icon></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>

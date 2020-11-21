@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'add-profile',
+    loadChildren: () => import('./add-profile/add-profile.module').then( m => m.AddProfilePageModule)
+  },
 ];
 
 @NgModule({
